@@ -3,7 +3,7 @@
 
   Docker Hub上也有Ethereum-go镜像，这里打算自定义Ethereum-go镜像，官方镜像有两种，一种是基于Ubuntu的，另一种是基于Alpine Linux（一种轻量级的Linux发行版，包管理工具为apk，它的内置命令如下图）的，而这里也打算基于Alpine构建Ethereum-go镜像，因为Alpine镜像比较小，下载比较快.那为什么不用官方的呢，因为构建官方基于Alpine的Ethereum-go镜像的Dockerfile中有命令：`ENTRYPOINT [/geth]`，所以每次启动容器时还需要为其传入参数，想要进入shell界面，还需要在启动容器时使用参数`--entrypoint /bin/sh`(注意这里的参数是`docker run`的参数，而非geth(go实现的Ethereum客户端)的参数),比较麻烦，因而在自定义的Dockerfile中去掉了那条命令.
 
-  ![Alpine Linux预置命令](./iamges/AlpineLinux.png)
+  ![Alpine Linux预置命令](./images/AlpineLinux.png)
 
   Dockerfile：
 
