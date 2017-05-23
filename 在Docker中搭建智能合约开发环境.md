@@ -49,7 +49,7 @@ EXPOSE 30303
 
 这里的Remix是在主机上运行的，因为Docker中没有图形界面，无法安装谷歌等浏览器，只能在主机上使用Remix，然后通过RPC连接Docker中的以太坊私有链节点.
 
-1. 首先启动[Remix](http://remix.ethereum.org)，如下图：
+1. 首先启动[Remix](http://remix.ethereum.org)，这里注意不要使用https，谷歌默认使用https，所以在输入网址时，去掉s，否则将连接失败，如下图：
 ![Remix](./images/Remix.png)
 2. 使Remix连接以太坊私有链节点，前提是私有链已经启动，并且启动时使用参数`--rpc --rpcaddr ip`，这里的`ip`是节点所在Docker容器的ip地址，不是`127.0.0.1`，也不是`localhost`，而是它的外网ip地址，在容器中的shell中使用命令`hostname -i`即可得到ip地址，或在主机中使用`sudo docker inpect name`，其中`name`为Docker容器的名字.还有一点就是，在创建容器时要将主机的某个端口与容器进行映射，使用参数`-p host_port:container_port`，一般`container_port`为`8545`，geth的RPC API就是使用的这个端口，这一点格外重要，因为主机上的Remix就是通过RPC API连接的以太坊私有链节点.以上准备工作做好以后就可使用Remix连接节点了，步骤如下：
 
