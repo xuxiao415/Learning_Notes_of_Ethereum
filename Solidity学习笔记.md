@@ -20,3 +20,4 @@
 1. 函数返回多个值
    一种方法是通过元组（tuple）实现，另一种方法是通过返回多个函数中的局部变量实现
    
+2. fallback函数，function（）{}，它是个匿名函数，当用户向其所在的智能合约发送ether时，自动执行. 一般它需要配合payable modifier使用，使得该函数能接收ether，并对其做相应的处理，function（）payable{}
