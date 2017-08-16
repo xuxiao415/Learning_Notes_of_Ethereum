@@ -14,3 +14,9 @@
 
 1. cumulativeGasUsed is the sum of gasUsed by this transaction and all preceding transactions in the same block.
 [https://ethereum.stackexchange.com/questions/3346/what-is-and-how-to-calculate-cumulative-gas-used](https://ethereum.stackexchange.com/questions/3346/what-is-and-how-to-calculate-cumulative-gas-used)
+
+### 2017-08-16
+
+1. 函数返回多个值
+   一种方法是通过元组（tuple）实现，另一种方法是通过返回多个函数中的局部变量实现
+   
